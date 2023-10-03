@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Catbeeds
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" class="ion-text-center">Catbeeds</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div>
+    <ion-card *ngFor="let cat of listCats">
+      <ion-card-header>
+        <p>Nombre: {{ cat.name }}</p>
+        <!-- <ion-img src="{{ cat.imageUrl ? cat.imageUrl : 'assets/img/404.jpg' }}"></ion-img> -->
+        <ion-img src="{{ cat.cfa_url ? cat.cfa_url : './../../assets/img/404.png' }}"></ion-img>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row class="ion-justify-content-between">
+          <ion-col>
+            <p>Pais origen: {{cat.origin}}</p>
+          </ion-col>
+          <ion-col class="ion-text-center">
+            <p>Inteligencia: {{cat.intelligence}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>
